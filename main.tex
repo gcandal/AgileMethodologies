@@ -115,12 +115,12 @@
 % *** GRAPHICS RELATED PACKAGES ***
 %
 \ifCLASSINFOpdf
-  % \usepackage[pdftex]{graphicx}
+  \usepackage[pdftex]{graphicx}
   % declare the path(s) where your graphic files are
-  % \graphicspath{{../pdf/}{../jpeg/}}
+  \graphicspath{{../pdf/}{../jpeg/}{../png/}}
   % and their extensions so you won't have to specify these with
   % every instance of \includegraphics
-  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
 \else
   % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
   % will default to the driver specified in the system graphics.cfg if no
@@ -450,7 +450,7 @@ principles are:
   improvement and employee empowerment.
   \item Use visual control so no problems are hidden.
   \item Use pull systems to avoid overproduction.
-  \item Level out the workload (heijunka). (Work like the tortoise, not the hare).
+  \item Level out the workload (work like the tortoise, not the hare).
 \end{itemize}
 
 While the first two are clearly lean principles, the other three will be revisited
@@ -463,6 +463,7 @@ line, such as bottlenecks and waste (in this case, that would be having unused
 materials, or inventory).
 
 \subsection{What is it}
+\label{whatis}
 
 Kanban is japanese for signboard (\textit{kan} means card and \textit{ban} means signal), and in
 the TPS it's just that: a physical board that workers write on and move around
@@ -473,32 +474,135 @@ However, Kanban has evolved to be more than that, and is currently not restricte
 but is regarded as a lightweight framework for project management. The way it works is the
 following: you have a board with several columns, each representing a stage of the process.
 Then, you add to the first column the tasks you are starting, and move them to the next
-column as soon as they enter that stage of the process. It may seem too simplistic,
-but we have to keep in mind Toyota's Way \textit{Use visual control so no problems are
-hidden}. 
+column as soon as they enter that stage of the process.
+In figure \ref{kanban_dev}, one of example of this mechanic would be: task J is under
+development, and as soon as it is considered \textit{Done} it can be moved to testing.
+ It may seem too simplistic, but we have to keep in mind Toyota's Way \textit{Use visual control so no problems are
+hidden}. There is more than meets the eye though, because as we already stated before,
+Kanban is more than visualization. Below we outline Kanban's core principles.
+We will elaborate on how to use a Kanban effectively throughout this section.
 
-There is more than meets the eye though, because as we already stated before, Kanban is more
-than visualization. Below we outline Kanban's core principles.
-
-\subsubsection{Definition of done}
-
-As in other agile methodologies, such as Scrum, it is pivotal to have a clear
-and strict definition of done, since tasks can only move from one column to the
-next when those conditions are met.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=2.5in]{kanban-board}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+\caption{Example Kanban for software development.}
+\label{kanban_dev}
+\end{figure}
 
 \subsubsection{Flow instead of batch}
-CI
+Unlike time-boxed methods like Scrum, where the whole planning orbitates around
+a sprint, in Kanban there is the notion of continuous flow: tasks keep comming
+in and being delivered, teams don't have to wait until the end of the sprint
+to deploy the changes. This idea is highly compatible with lean principles and
+continuous integration practices.
+
+\subsubsection{Definition of done}
+As in other agile methodologies, such as Scrum, it is pivotal to have a clear
+and strict definition of done, since tasks can only move from one column to the
+next when those conditions are met. This definition is stage-specific, meaning
+that in our example there must be a definition for Development, Testing, Deployment, etc.
+Example definitions for our Kanban in figure \ref{kanban_dev} could be, respectively: \textit{"Satisfies user story or fixes bug"},
+\textit{"Passes all tests, including regression ones, and has at least 60\% converage"}
+and \textit{"Is deployed in our production servers and users have access to it"}.
+The absence of such definitions decrease a team's velocity, since its members would
+have to stop being productive to wonder, or discuss, if a certain task should be
+moved to the next stage. When a task is considered Done in a certain stage, it is
+passed into that stage's sub-column, ready to be pulled (we will explain what
+this means in the following paragraph).
+
 \subsubsection{Pull instead of push}
+Tasks are not assigned to a person, but instead each person will grab a task for
+a number of different ones available, as long as they're in the first column, or in a done state. It's like going
+to the supermarket: the products are there for you to chose from.
+Even if Toyota's \textit{Use pull systems to avoid overproduction.} may not seem
+to apply to software development, it is still used in Kanban. The rationale behind
+it is that it gives people autonomy, thus increases velocity as well as satisfaction.
+It's a reflex of Toyota's \textit{Respect for people}.
+In software development, this practice can manifest itself in several ways.
+For instances, developments teams do not hand out their code for QA, instead QA teams
+will pick \textit{Done} features and start working on them.
+It can also impact DevOps/Release teams, where the teams which handle deployment aren't waiting
+for development to hand them the production-ready code, what they do is create
+the necessary infrastructure for any developer to be able to put their code into
+production without much trouble. This is how engineering teams work at Spotify.
+Again, notice how lean and close to continuous integrations this practice is.
+
 \subsubsection{Work in progress}
-\subsubsection{Estimating, prioritization and scheduling}
-None or velocity By sticky
+If tasks are picked and not assigned, there is the risk of stalling the system,
+having many tasks in the pipeline, but few in the final stage. It can also happen
+that team members decide to pull too many tasks for themselves, losing productivity
+to multi-tasking and context-switching.
+To avoid this kind of problem, as well as maintain an healthy flow in the system,
+Kanban uses limit the Work in progress (WIP). WIP means that there is a certain
+capacity associated to each column (besides the first and the last ones) and that
+you can't pull more tasks in a column that is already full. Both ongoing and
+done tasks contribute to reaching the WIP's capacity. In figure \ref{kanban_dev} you can see WIP red numbers.
+Each team must find the balance between having a low WIP, so they avoid the problems
+outlined ealier, but not so low that it starts getting in the way of productivity.
+Finding the right WIP is highly specific to each team and stage. For instances,
+it may make sense for a team of 5 developers to have a WIP of 10 in the development
+stage, but it would be unproductive for the same team, if they have a single tester,
+to have the same WIP in the test phase.
+
+\subsubsection{Estimation, prioritization and delivery times}
+A criticism made to Kanban, mainly for people with Waterfall or Scrum backgrounds,
+is that predictability is low. Since the methodology does not enforce estimation,
+there is no way to track velocity or to predict delivery timings.
+There are two answers for this: the first is that you can actually have a reasonable
+way to track velocity, if that's what you really want, and the second is that
+you don't need to track it.
+For the first case, if you measure how many tasks you complete for a given time window,
+you can have an estimate of your team's velocity. Even if each task may have different
+weights, in the long term you can get a rough estimate.
+The reason why it is not important for Kanban to measure velocity, is that it focus
+on the long term: remember Toyota's \textit{work like the tortoise, not the hare}.
+By having a continuous flow of work while giving ownership and autonomy to your team
+members, you are assuring maximum productivity for each task. So the estimated
+completion time for a task would be as soon as possible. There is, however, space
+for prioritization: you can say that bugs get an higher priority
+than features, so that bug-related tasks move faster across the pipeline and are
+completed and deployed sooner.
+Have in mind that, by being a lightweight framework rather than enforcing a
+set of strict rules, like for instances Extreme Programming does, there is
+space to modify Kanban for your own context. You can for instances use Kanban
+in conjunction with Scrum, and model a sprint in terms of a Kanban board.
+More on this in the next section.
 
 \subsection{Relating to other methodologies}
 \subsubsection{Open Allocation}
-\subsubsection{Kanban with Scrum}
-\subsubsection{Kanban instead of Scrum}
+Some highly sucessful tech companies, like Github and Valve, have been using
+this project scheduling methodology. Open allocation means can transfer between
+projects regardless of headcount allowances, performance reviews, or tenure at
+the company, as long as they are providing value to projects that are useful to
+the business goals of the company. Its a way of self-organization, and very
+similar to the principles of \textit{Respect for people} (by entrusting them
+with responsability) and \textit{Use pull systems}, as we have seen earlier.
+\subsubsection{Kanban with Scrum, XP or Waterfall}
+We could easily match Scrum and Kanban together, having the sprint phases modeled
+as columns, so we would end up with columns named sprint backlog, task breakdown,
+development, etc. The Scrum roles and rituals are also compatible with Kanban,
+there is nothing stopping a team from having a Product Owner and Scrum Master,
+or doing daily standups while doing Kanban.
+The same principles applies to any other software development workflows.
+\subsubsection{Kanban instead of Scrum, XP or Waterfall}
+
 
 \subsection{Testing}
+As we have discussed before, Kanban is compatible with testing, since it is able to
+accomodate it in any phase of the process, as there are no guidelines regarding how it should, or should not, be done.
+You can include every level of testing, or specification of testing, in your Kanban
+workflow.
+
+\subsection{Conclusion}
+The Kanban board will act as a single point of communication for the
+team, so everyone is synchronized and aware of the state of the work being done.
+\textit{Create a continuous process flow to bring problems to the surface}.
+Its job is to make bottlenecks clear and as soon as possible. \textit{Use visual control so no problems are hidden}.
+The philosophy also recommends a set of principles to achieve maximum flow in the
+pipeline while maintaining quality (assured by addind QA stages/columns into your process).
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.

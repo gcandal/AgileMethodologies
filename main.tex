@@ -429,19 +429,21 @@ I wish you the best of success.
 \subsection{Subsection Heading Here}
 Subsection text here.
 
-
 \subsubsection{Subsubsection Heading Here}
 Subsubsection text here.
+
+
+
 \section{Kanban}
 \subsection{Origins}
-Kanban, as a method for managing and transmiting knowledge, was invented in 1953
-by Taiichi Ohno as part of the Toyota Production System (TPS), which later was
+Kanban, as a method for managing and transmiting knowledge, and was invented in 1953
+by Taiichi Ohno as part of the Toyota Production System (TPS), which was later
 adopted by other companies and is regarded as one of the most influential systems,
 if not the most, behind the Lean Manufacturing philosofy. As a methodology
 developed for a company - Toyota Motors - operating in the war-devastated Japan
-and competing against well estabilished US companies, TPS focused on reducing
+and competing against well estabilished US car companies, TPS focused on reducing
 overburden, inconsistencies and waste. In order to achieve those goals, a set of
-guiding principles, which became known as \textit{The Toyota Way}. Some of those
+guiding principles were followed, which became known as \textit{The Toyota Way}. Some of those
 principles are:
 
 \begin{itemize}
@@ -455,7 +457,7 @@ principles are:
 
 While the first two are clearly lean principles, the other three will be revisited
 later in this section, as they are essential for understanding the current Kanban.
-Central to this notion of eliminating waste is Toyota's
+Central to the notion of eliminating waste is Toyota's
 Just in Time (JIT), where a component is only produced when it is needed by
 a station further beyond in the production pipeline. So Kanban was invented so that
 there was an easy way to spot innefiencies in the material flow of an assembly
@@ -469,6 +471,10 @@ Kanban is japanese for signboard (\textit{kan} means card and \textit{ban} means
 the TPS it's just that: a physical board that workers write on and move around
 which they use to communicate material requirements. When a station needs a certain
 material, they fill a Kanban and deliver it in the station that produces it.
+This way, stations do not produce more than what the stations ahead need, since they are
+only producing what they're asked to. A request for a certain part is made on a certain
+step of the pipeline, and requests for materials needed for that part will be propagated back
+until there are no more dependencies to satisfy.
 
 However, Kanban has evolved to be more than that, and is currently not restricted to visualization,
 but is regarded as a lightweight framework for project management. The way it works is the
@@ -478,16 +484,13 @@ column as soon as they enter that stage of the process.
 In figure \ref{kanban_dev}, one of example of this mechanic would be: task J is under
 development, and as soon as it is considered \textit{Done} it can be moved to testing.
  It may seem too simplistic, but we have to keep in mind Toyota's Way \textit{Use visual control so no problems are
-hidden}. There is more than meets the eye though, because as we already stated before,
+hidden}. This is the visualization part, but there is more than meets the eye though, because as we said before,
 Kanban is more than visualization. Below we outline Kanban's core principles.
 We will elaborate on how to use a Kanban effectively throughout this section.
 
 \begin{figure}[!t]
 \centering
 \includegraphics[width=2.5in]{kanban-board}
-% where an .eps filename suffix will be assumed under latex,
-% and a .pdf suffix will be assumed for pdflatex; or what has been declared
-% via \DeclareGraphicsExtensions.
 \caption{Example Kanban for software development.}
 \label{kanban_dev}
 \end{figure}
@@ -497,7 +500,7 @@ Unlike time-boxed methods like Scrum, where the whole planning orbitates around
 a sprint, in Kanban there is the notion of continuous flow: tasks keep comming
 in and being delivered, teams don't have to wait until the end of the sprint
 to deploy the changes. This idea is highly compatible with lean principles and
-continuous integration practices.
+continuous integration practices, and aims to maximzie long-term productivity.
 
 \subsubsection{Definition of done}
 As in other agile methodologies, such as Scrum, it is pivotal to have a clear
@@ -510,7 +513,7 @@ and \textit{"Is deployed in our production servers and users have access to it"}
 The absence of such definitions decrease a team's velocity, since its members would
 have to stop being productive to wonder, or discuss, if a certain task should be
 moved to the next stage. When a task is considered Done in a certain stage, it is
-passed into that stage's sub-column, ready to be pulled (we will explain what
+passed into that stage's Done sub-column, ready to be pulled (we will explain what
 this means in the following paragraph).
 
 \subsubsection{Pull instead of push}

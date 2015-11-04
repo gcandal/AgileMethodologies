@@ -437,13 +437,13 @@ Subsubsection text here.
 \section{Kanban}
 \subsection{Origins}
 Kanban, as a method for managing and transmiting knowledge, and was invented in 1953
-by Taiichi Ohno as part of the Toyota Production System (TPS), which was later
+by Taiichi Ohno as part of the Toyota Production System (TPS) \cite{kanban_orig}, which was later
 adopted by other companies and is regarded as one of the most influential systems,
-if not the most, behind the Lean Manufacturing philosofy. As a methodology
+if not the most, behind the Lean Manufacturing philosofy \cite{kanban_orig2}\cite{kanban_orig3}. As a methodology
 developed for a company - Toyota Motors - operating in the war-devastated Japan
 and competing against well estabilished US car companies, TPS focused on reducing
 overburden, inconsistencies and waste. In order to achieve those goals, a set of
-guiding principles were followed, which became known as \textit{The Toyota Way}. Some of those
+guiding principles were followed, which became known as \textit{The Toyota Way} \cite{tps}\cite{tps2}. Some of those
 principles are:
 
 \begin{itemize}
@@ -467,7 +467,7 @@ materials, or inventory).
 \subsection{What is it}
 \label{whatis}
 
-Kanban is japanese for signboard (\textit{kan} means card and \textit{ban} means signal), and in
+Kanban is japanese for signboard (\textit{kan} means card and \textit{ban} means signal)\cite{kanban_def}, and in
 the TPS it's just that: a physical board that workers write on and move around
 which they use to communicate material requirements. When a station needs a certain
 material, they fill a Kanban and deliver it in the station that produces it.
@@ -491,7 +491,7 @@ We will elaborate on how to use a Kanban effectively throughout this section.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=2.5in]{kanban-board}
-\caption{Example Kanban for software development.}
+\caption{Example Kanban for software development.\cite{kanban_fig}}
 \label{kanban_dev}
 \end{figure}
 
@@ -530,7 +530,7 @@ will pick \textit{Done} features and start working on them.
 It can also impact DevOps/Release teams, where the teams which handle deployment aren't waiting
 for development to hand them the production-ready code, what they do is create
 the necessary infrastructure for any developer to be able to put their code into
-production without much trouble. This is how engineering teams work at Spotify.
+production without much trouble. This is how engineering teams work at Spotify \cite{spotify} and Microsoft's Xbox team \cite{ericb}.
 Again, notice how lean and close to continuous integrations this practice is.
 
 \subsubsection{Work in progress}
@@ -576,7 +576,7 @@ More on this in the next section.
 
 \subsection{Relating to other methodologies}
 \subsubsection{Open Allocation}
-Some highly sucessful tech companies, like Github and Valve, have been using
+Some highly sucessful tech companies, like Github and Valve \cite{openalloc}, have been using
 this project scheduling methodology. Open allocation means can transfer between
 projects regardless of headcount allowances, performance reviews, or tenure at
 the company, as long as they are providing value to projects that are useful to
@@ -744,11 +744,65 @@ The authors would like to thank...
 % <OR> manually copy in the resultant .bbl file
 % set second argument of \begin to the number of references
 % (used to reserve space for the reference number labels box)
-\begin{thebibliography}{1}
+\begin{thebibliography}{3}
 
 \bibitem{IEEEhowto:kopka}
 H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
   0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+\bibitem{openalloc}
+ Chris Dannen. \emph{Inside GitHub's Super-Lean Management Strategy And How It Drives Innovation".}
+ Fastcolabs, 2013. http://www.fastcompany.com/3020181/open-company/inside-githubs-super-lean-management-strategy-and-how-it-drives-innovation .
+ Accessed 4-Nov 2015.
+
+\bibitem{kanban_def}
+  \emph{Kanban}. Dictionary.com, 2015. Accessed 4-Nov 2015.
+
+\bibitem{kanban_orig}
+  Taiichi Ohno.
+  \emph{Toyota Production System - beyond large-scale production}.
+  Productivity Press, 1988.
+
+\bibitem{kanban_orig2}
+ James P. Womack and Daniel T. Jones and Daniel Roos.
+ \emph{The Machine That Changed the World}.
+ 1990.
+
+\bibitem{kanban_orig3}
+  Steven Spear and H. Kent Bowen.
+  \emph{Decoding the DNA of the Toyota Production System}.
+  Harvard Business Review, 1999.
+
+\bibitem{kanban_fig}
+ Pawel Brodzinski.
+ \emph{Kanban: When It Is Hard to Map a Process to a Kanban Board}.
+ 2011.
+ http://brodzinski.com/2011/08/map-process-to-kanban-board.html .
+ Accessed 4-Nov 2015.
+
+\bibitem{tps}
+  Y. Sugimori and K. Kusunoki and F. Cho and S. Uchikawa
+  \emph{Toyota production system and Kanban system Materialization of just-in-time and respectfor-human
+system}.
+ International Journal of Production Research, 1977.
+
+\bibitem{tps2}
+  Jeffrey K. Liker
+  \emph{The Toyota Way: 14 Management Principles from the World's Greatest Manufacturer.}
+  McGraw-Hill, 2004.
+
+\bibitem{spotify}
+ Henrik Kniberg.
+ \emph{Spotify engineering culture}.
+ Spotify Labs, 2014.
+ https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/ .
+ Accessed 4-Nov 2015.
+
+\bibitem{ericb}
+  Eric Brechner.
+  \emph{Presentation on Agile Project Management with Kanban}.
+  https://youtu.be/CKWvmiY7f_g .
+  Acessed 4-Nov 2015.
 
 \end{thebibliography}
 

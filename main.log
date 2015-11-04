@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.28)  3 NOV 2015 22:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2015.10.28)  4 NOV 2015 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -199,16 +199,73 @@ LaTeX Font Info:    External font `cmex10' loaded for size
  <kanban-board.png, id=1, 361.35pt x 143.78719pt>
 File: kanban-board.png Graphic file (type png)
  <use kanban-board.png>
-Package pdftex.def Info: kanban-board.png used on input line 487.
+Package pdftex.def Info: kanban-board.png used on input line 493.
 (pdftex.def)             Requested size: 180.67499pt x 71.89342pt.
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- </home/gcandal/TVVS-agile-methodologies/kanban-board.png>]
+ </home/gcandal/TVVS-agile-methodologies/kanban-board.png>] [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 719.
+(Font)              <8> on input line 750.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 719.
+(Font)              <6> on input line 750.
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--757
+[]\OT1/ptm/m/n/8 Chris Dan-nen. \OT1/ptm/m/it/8 In-side GitHub's Super-Lean Man-age-ment
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--757
+\OT1/ptm/m/it/8 Strat-egy And How It Drives In-no-va-tion". \OT1/ptm/m/n/8 Fast-co-labs, 2013.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--757
+\OT1/ptm/m/n/8 http://www.fastcompany.com/3020181/open-company/inside-githubs-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 795--800
+\OT1/ptm/m/n/8 https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/ .
+ []
+
+/home/gcandal/TVVS-agile-methodologies/main.tex:804: Missing $ inserted.
+<inserted text> 
+                $
+l.804   https://youtu.be/CKWvmiY7f_
+                                   g .
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/home/gcandal/TVVS-agile-methodologies/main.tex:806: Missing $ inserted.
+<inserted text> 
+                $
+l.806 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+/home/gcandal/TVVS-agile-methodologies/main.tex:806: Missing } inserted.
+<inserted text> 
+                }
+l.806 
+      
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+/home/gcandal/TVVS-agile-methodologies/main.tex:806: Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.806 
+      
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
 
 
 ** Conference Paper **
@@ -221,20 +278,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2] (/home/gcandal/TVVS-agile-methodologies/main.aux) ) 
+[3
+
+] (/home/gcandal/TVVS-agile-methodologies/main.aux) ) 
 Here is how much of TeX's memory you used:
- 2302 strings out of 493085
- 38007 string characters out of 6136916
- 106678 words of memory out of 5000000
- 5777 multiletter control sequences out of 15000+600000
+ 2312 strings out of 493085
+ 38110 string characters out of 6136916
+ 105710 words of memory out of 5000000
+ 5787 multiletter control sequences out of 15000+600000
  38728 words of font info for 72 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  37i,7n,23p,261b,234s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/gcandal/TVVS-agile-methodologies/main.pdf (2 pages, 129219 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /home/gcandal/TVVS-agile-methodologies/main.pdf (3 pages, 165034 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
- 22 compressed objects within 1 object stream
+ 52 PDF objects out of 1000 (max. 8388607)
+ 36 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

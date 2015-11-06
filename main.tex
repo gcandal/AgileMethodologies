@@ -488,7 +488,7 @@ hidden}. This is the visualization part, but there is more than meets the eye th
 Kanban is more than visualization. Below we outline Kanban's core principles.
 We will elaborate on how to use a Kanban effectively throughout this section.
 
-\begin{figure}[!t]
+\begin{figure}%[!t]
 \centering
 \includegraphics[width=2.5in]{kanban-board}
 \caption{Example Kanban for software development.\cite{kanban_fig}}
@@ -638,20 +638,23 @@ XP, as presented in the following sections, will propose practices to reduce the
 
 \subsection{The fundamentals behind XP}
 XP embraces five values to guide development: communication, simplicity, feedback, courage, and respect. From this more abstract principles, XP has some fundamental principles that support all its practices. Those are:
-\paragraph{Humanity \& Diversity \& Mutual Benefit \& Accepted Responsibility} XP aims at developers, that are above all humans and need a balance between personal and professional lives. Teams are expected to have all kinds of knowledge needed inside of it, through diversity of workers. In XP, people work towards a common goal. "The computer business is really a people business and maintaining working relationships is important."\cite{Beck:2004tc} Each team member should say which tasks he wants to do, thus accepting his responsibility in the project;
+\paragraph{Humanity \& Diversity \& Mutual Benefit \& Accepted Responsibility} XP aims at developers, that are above all humans and need a balance between personal and professional lives. Teams are expected to have all kinds of knowledge needed inside of it, through diversity of workers. In XP, people work towards a common goal. ``The computer business is really a people business and maintaining working relationships is important.''\cite{Beck:2004tc} Each team member should say which tasks he wants to do, thus accepting his responsibility in the project;
 \paragraph{Failure \& Reflection \& Opportunity \& Improvement \& Baby Steps} Failed approaches to a problem are a good thing. With failure, developers will learn how to do it correctly. Teams should think about what they do ir order to improve. Each problem should be used as an opportunity to improve.  XP aims for continuous improvement, and with its methods tries to find areas where the team can do better. Baby Steps are therefore a metaphor for these practices that take place over the course of time;
 \paragraph{Flow \& Self-Similarity \& Redundancy \& Quality} There should be a continuous flow of activities in contrast with large blocks of different activities, e.g. the team should do continuous integration; Also patterns should be valued. These help keeping an organised structure and comprehensive code. Redundancy helps to keep the defect rate very low, e.g. by the use of pair programming. All to achieve quality. Developers should be aware that lowering quality standards often results in later, less predictable delivery;
 \paragraph{Economics} In the long run, XP will benefit the company economically by providing better software.
 
 \subsection{Primary Practices}
+As mentioned above XP is a set of good practices that gain a new meaning when joined. To effectively put XP into practice a team should implement \textit{all} of these (as showed in figure \ref{fig:xp_pract}):
 
-\paragraph{Sit Together}\paragraph{Whole Team}
-\paragraph{Informative Workspace}
-\paragraph{Energized Work}\paragraph{Pair Programming}
-\paragraph{Stories}\paragraph{Weekly Cycle}\paragraph{Quarterly Cycle}\paragraph{Slack}\paragraph{Ten-Minute Build}
-\paragraph{Continuous Integration}
-\paragraph{Test-First Programming}
-\paragraph{Incremental Design}
+\paragraph{Sit Together} The best way for a team to work, is to be in the same space. This shared space will allow the team members to clarify any doubt they have with any other team member. This will fasten their work;\paragraph{Whole Team} Teams should be cross-functional and all team members should focus on only one project at a time;
+\paragraph{Informative Workspace} The workspace should remind the team what they are there to do. The use of a planing board with user stories is one important artefact to have there;
+\paragraph{Energized Work} This practice used to be named \textit{40-hour week}. It translated in having balanced work days. Although over-hours can be done once in a while, there should not be a ``Today we will have to stay later \textit{again}'' discourse.\paragraph{Pair Programming} Pair programming consists in having two individuals setting side-by-side with only one computer where they code. One individual is the driver, he writes the code. The other is watching and helping the driver. Together they design a complete system. Pairs should not be fixed. A developer should pair, at least, with two other developers per day, allowing the team to interact as a whole;
+\paragraph{Stories} User Stories (US) should have a title and a brief description. They should be estimated early in the development cycle. This way the customer will be more informed when making decisions;\paragraph{Weekly Cycle} The starting of each week should include: a review of the progress to date, having the customers pick US for that week and having the developers breaking these into tasks, estimating them and taking responsibility over them. After this, acceptance tests should be defined. The purpose of having a one-week cycle is because everyone is focused on Friday.\paragraph{Quarterly Cycle} Every three months, a team should stop to review their work and focus on the big picture. Like weeks, seasons can be a natural starting point for each cycle;\paragraph{Slack} Every one in a while, there should be time for other activities, usually 20\% of the time (e.g. weeks). This will give the project a margin to get back on track if needed, too;\paragraph{Ten-Minute Build} Builds should be optimised so they take ten minutes maximum. Long builds mean that programmers will not conduct testing as often as they should;
+\paragraph{Continuous Integration} The code developed by a pair should be integrated every two hours. This will allow problems to arise sooner. It can be done in a synchronised or unsynchronised way. K. Beck recommends to keep it synchronised in order to not lose focus if it fails;
+\paragraph{Test-First Programming} One of the main beliefs of XP is this one. Before implementing a task, all tests for it should be written. This will force developers to think before coding and consider different designs that could work. More than that, it will provide a guarantee that tests are not written to fit the implementation. Having a 100\% coverage means that one can safely change code being sure it will not break another feature. \cite{Martin:2009uy}
+\paragraph{Incremental Design} Requirements change. Although doing the whole design upfront can allow do have a structured software, the cost of putting it together is high, considering it can change anytime. XP says that teams should design with \textit{Baby Steps}, i.e., adding new layers as they are needed without loosing sight of the big picture. As mentioned above, because the code is fully tested, coders can efficiently refactor their design without fearing that they will be breaking other part of the system.
+
+These practices are complemented with some more advanced ones, called \textit{Corollaries}, that can also be seen in figure \ref{fig:xp_pract}.
 
 \begin{figure}
 \centering

@@ -4,3 +4,7 @@ main.pdf
 *.fls
 *.log
 *.gz
+
+*.bbl
+
+*.blg

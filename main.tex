@@ -324,22 +324,24 @@
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Michael Shell}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Georgia Institute of Technology\\
-Atlanta, Georgia 30332--0250\\
-Email: http://www.michaelshell.org/contact.html}
+\author{\IEEEauthorblockN{Ana Sousa}
+\IEEEauthorblockA{Faculty of Engineering\\
+University of Porto\\
+Porto, Portugal\\
+Email: ei11068@fe.up.pt}
 \and
-\IEEEauthorblockN{Homer Simpson}
-\IEEEauthorblockA{Twentieth Century Fox\\
-Springfield, USA\\
-Email: homer@thesimpsons.com}
+\IEEEauthorblockN{Augusto Silva}
+\IEEEauthorblockA{Faculty of Engineering\\
+University of Porto\\
+Porto, Portugal\\
+Email: augusto.cravo.silva@fe.up.pt}
 \and
-\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
-\IEEEauthorblockA{Starfleet Academy\\
-San Francisco, California 96678--2391\\
-Telephone: (800) 555--1212\\
-Fax: (888) 555--1212}}
+\IEEEauthorblockN{Gabriel Candal}
+\IEEEauthorblockA{Faculty of Engineering\\
+University of Porto\\
+Porto, Portugal\\
+Email: ei11066@fe.up.pt}
+}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -399,17 +401,8 @@ The abstract goes here.
 
 
 \section{Introduction}
-% no \IEEEPARstart
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.8b and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
 
-\hfill mds
-
-\hfill August 26, 2015
+To do
 
 %
 % -> Overview Agile
@@ -426,13 +419,23 @@ I wish you the best of success.
 %
 %
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+\section{Agile Software Development}
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+The term \textit{Agile Software Development} was introduced in 2001. It aimed to provide a large umbrella to the new vision that had started to rise among the software community. This vision is centred in four values \cite{Martin:2006vx}:
+\paragraph{Individuals and interactions over processes and tools} Agile considers that the software industry is, above all, a people's industry. By this reason, assembling a good team will be of greater value than to have many processes that guide them through development;
+\paragraph{Working software over comprehensive documentation} Agile does not consider documentation irrelevant. ``It is always a good idea for the team to write and maintain a short rationale and structure document. But that document needs to be short and salient.''\cite{Martin:2006vx} This means that the team should not focus too much on writing documentation but instead writing quality code.
+\paragraph{Customer collaboration over contract negotiation} Customer feedback is considered important since the customer will be the one evaluating the product in the end. Above all, the product should fit the needs of the costumer.
+\paragraph{Responding to change over following a plan} This is the value that gives this family of methodologies its name, i.e., \textit{Agile} software development must be \textit{agile}. Because customer needs change, requirements change, and the developers need to be able to handle it properly.
 
+\subsection{Agile Design}
+Agile methodologies propose work practices for the teams and management. However, it also introduces coding related advice. One is the SOLID Principles, as guidance to design activities. These are \cite{Martin:2006vx}\cite{Martin:2009uy}:
+\paragraph{Single-Responsibility Principle} Each unit of the software, e.g. function, class, module, should have a well-defined propose in a way that avoids code duplication and separates concerns;
+\paragraph{Open/Closed Principle} A class should be opened for extension but not for modification. This means that, when adding functionality, the system should be refactored in a way that introduces new classes via subclassing rather than changing the code of the existing classes;
+\paragraph{Liskov Substitution Principle} In the same situation, subclasses will behave in the same way as the parent class, i.e. applying a parent class transformation to a sub class will not cause a misbehaviour;
+\paragraph{Interface Segregation Principle}  Interfaces should be separated in a way that each accomplishes only \textit{one} goal;
+\paragraph{Dependency-Inversion Principle} High level models do not depend on low level models, thus low level models (implementations) can be interchanged without affecting the behaviour of the system.\\
 
+In the following sections, the more relevant agile methodologies are presented.
 
 \section{Kanban}
 \subsection{Origins}
@@ -783,7 +786,7 @@ The conclusion goes here.
 
 
 % use section* for acknowledgment
-\section*{Acknowledgment}
+%\section*{Acknowledgment}
 
 
 The authors would like to thank...

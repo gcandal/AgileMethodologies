@@ -1,4 +1,3 @@
-%% bare_conf.tex
 %% V1.4b
 %% 2015/08/26
 %% by Michael Shell
@@ -306,10 +305,10 @@
 % (Unless specifically asked to do so by the journal or conference you plan
 % to submit to, of course. )
 
+\usepackage{etoolbox}
 
 % correct bad hyphenation here
 \hyphenation{}
-
 
 \begin{document}
 %
@@ -324,22 +323,24 @@
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Michael Shell}
-\IEEEauthorblockA{School of Electrical and\\Computer Engineering\\
-Georgia Institute of Technology\\
-Atlanta, Georgia 30332--0250\\
-Email: http://www.michaelshell.org/contact.html}
+\author{\IEEEauthorblockN{Ana Sousa}
+\IEEEauthorblockA{Faculty of Engineering\\
+University of Porto\\
+Porto, Portugal\\
+Email: ei11068@fe.up.pt}
 \and
-\IEEEauthorblockN{Homer Simpson}
-\IEEEauthorblockA{Twentieth Century Fox\\
-Springfield, USA\\
-Email: homer@thesimpsons.com}
+\IEEEauthorblockN{Augusto Silva}
+\IEEEauthorblockA{Faculty of Engineering\\
+University of Porto\\
+Porto, Portugal\\
+Email: augusto.cravo.silva@fe.up.pt}
 \and
-\IEEEauthorblockN{James Kirk\\ and Montgomery Scott}
-\IEEEauthorblockA{Starfleet Academy\\
-San Francisco, California 96678--2391\\
-Telephone: (800) 555--1212\\
-Fax: (888) 555--1212}}
+\IEEEauthorblockN{Gabriel Candal}
+\IEEEauthorblockA{Faculty of Engineering\\
+University of Porto\\
+Porto, Portugal\\
+Email: ei11066@fe.up.pt}
+}
 
 % conference papers do not typically use \thanks and this command
 % is locked out in conference mode. If really needed, such as for
@@ -409,17 +410,8 @@ software testing in their workflows.
 
 
 \section{Introduction}
-% no \IEEEPARstart
-This demo file is intended to serve as a ``starter file''
-for IEEE conference papers produced under \LaTeX\ using
-IEEEtran.cls version 1.8b and later.
-% You must have at least 2 lines in the paragraph with the drop letter
-% (should never be an issue)
-I wish you the best of success.
 
-\hfill mds
-
-\hfill August 26, 2015
+To do
 
 %
 % -> Overview Agile
@@ -436,13 +428,31 @@ I wish you the best of success.
 %
 %
 
-\subsection{Subsection Heading Here}
-Subsection text here.
+\section{Agile Software Development}
 
-\subsubsection{Subsubsection Heading Here}
-Subsubsection text here.
+The term \textit{Agile Software Development} was introduced in 2001. It aimed to provide a large umbrella to the new vision that had started to rise among the software community. This vision is centred in four values \cite{Martin:2006vx}:
+\paragraph{Individuals and interactions over processes and tools} Agile considers that the software industry is, above all, a people's industry. By this reason, assembling a good team will be of greater value than to have many processes that guide them through development;
+\paragraph{Working software over comprehensive documentation} Agile does not consider documentation irrelevant. ``It is always a good idea for the team to write and maintain a short rationale and structure document. But that document needs to be short and salient.''\cite{Martin:2006vx} This means that the team should not focus too much on writing documentation but instead writing quality code.
+\paragraph{Customer collaboration over contract negotiation} Customer feedback is considered important since the customer will be the one evaluating the product in the end. Above all, the product should fit the needs of the costumer.
+\paragraph{Responding to change over following a plan} This is the value that gives this family of methodologies its name, i.e., \textit{Agile} software development must be \textit{agile}. Because customer needs change, requirements change, and the developers need to be able to handle it properly.
 
+\subsection{Agile Design}
+Agile methodologies propose work practices for the teams and management. However, it also introduces coding related advice. One is the SOLID Principles, as guidance to design activities. These are \cite{Martin:2006vx}\cite{Martin:2009uy}:
+\paragraph{Single-Responsibility Principle} Each unit of the software, e.g. function, class, module, should have a well-defined propose in a way that avoids code duplication and separates concerns;
+\paragraph{Open/Closed Principle} A class should be opened for extension but not for modification. This means that, when adding functionality, the system should be refactored in a way that introduces new classes via subclassing rather than changing the code of the existing classes;
+\paragraph{Liskov Substitution Principle} In the same situation, subclasses will behave in the same way as the parent class, i.e. applying a parent class transformation to a sub class will not cause a misbehaviour;
+\paragraph{Interface Segregation Principle}  Interfaces should be separated in a way that each accomplishes only \textit{one} goal;
+\paragraph{Dependency-Inversion Principle} High level models do not depend on low level models, thus low level models (implementations) can be interchanged without affecting the behaviour of the system.\\
 
+In the following sections, the more relevant agile methodologies are presented. The usage of each of these can be seen in figure \ref{fig:agilegraph}.
+
+\begin{figure}%[!t]
+\centering
+\includegraphics[width=1.0\linewidth]{agile_graph}
+\caption{Agile approaches organizations are using\protect\footnotemark \cite{ScrumAlliance:Zd-iSY9G}}
+\label{fig:agilegraph}
+\end{figure}
+\footnotetext{According to a Scrum Alliance study \cite{ScrumAlliance:Zd-iSY9G}. Multiple answers were allowed.}
 
 \section{Kanban}
 \subsection{Origins}
@@ -498,9 +508,9 @@ hidden}. This is the visualization part, but there is more than meets the eye th
 Kanban is more than visualization. Below we outline Kanban's core principles.
 We will elaborate on how to use a Kanban effectively throughout this section.
 
-\begin{figure}[!t]
+\begin{figure}%[!t]
 \centering
-\includegraphics[width=2.5in]{kanban-board}
+\includegraphics[width=1.0\linewidth]{kanban-board}
 \caption{Example Kanban for software development.\cite{kanban_fig}}
 \label{kanban_dev}
 \end{figure}
@@ -608,13 +618,98 @@ accomodate it in any phase of the process, as there are no guidelines regarding 
 You can include every level of testing, or specification of testing, in your Kanban
 workflow.
 
-\subsection{Conclusion}
+\subsection{Summing up} %????
 The Kanban board will act as a single point of communication for the
 team, so everyone is synchronized and aware of the state of the work being done.
 \textit{Create a continuous process flow to bring problems to the surface}.
 Its job is to make bottlenecks clear and as soon as possible. \textit{Use visual control so no problems are hidden}.
 The philosophy also recommends a set of principles to achieve maximum flow in the
 pipeline while maintaining quality (assured by addind QA stages/columns into your process).
+
+\section{Extreme Programming}
+Extreme Programming (XP) was one of the first Agile methodologies to be introduced. It dates back to 1996, the year the first project using XP was started\cite{Wells:2IqWBPJS}, which is long before the Agile Manifesto was written (2001)\cite{Martin:2006vx}. It derives from Kent Beck experience on software development and aims to put together the best practices. In fact, K. Beck says: ``To some folks, XP seems like just good common sense. So why the \textit{extreme} in the name? XP takes commonsense principles and practices to extreme levels.''\cite{Beck:2004tc}. The belief is that, while these practices can have problems when standing alone, when together they will support each other.
+
+\subsection{The problems and variables XP targets}
+The development of software, like other creation activities, have economic risks that need to be reduced. Those include:
+\paragraph{Schedule} There is a risk that the time that it takes to develop software is longer than expected;
+\paragraph{Purpose} It may happen that the intended purpose for the software in no longer valid and the project needs to be canceled or completely redefined. As the project evolves the cost of change tends to be higher;
+\paragraph{Maintainability} As the software gets more and more features it can become harder to keep it in a organized way, eventually becoming a \textit{big ball of mud}\cite{bigballofmud};
+\paragraph{High defect rate} Without a clear focus on testing, software will become full of \textit{bugs} and any change in legacy code will be reduced to a maximum, because it will possibly break the whole system.
+
+These risks translate in four variables\footnote{Presented in the first edition of \cite{Beck:2004tc}} we want to control and predict. 
+These variables are usually considered in project management and represented in a triangle like figure \ref{fig:triad} shows.
+
+\begin{figure}
+\centering
+\includegraphics[width=0.7\linewidth]{The_triad_constraints.jpg}
+\caption{The project management triangle\cite{pmtwiki}}
+\label{fig:triad}
+\end{figure}
+
+They are:
+\paragraph{Cost} The amount of investment needed. When starting a project, one should not have all the money available. The project should grow gradually;
+\paragraph{Time} There can be constraints like a predefined release date. More time means there can be more quality and a larger scope;
+\paragraph{Quality} The standard the customer is expecting. It is possible to reduce quality for some time, while maintaining the system working, but this will become unbearable;
+\paragraph{Scope} What the customer wants to include in the software. Less scope means the product is delivered faster and less expensive, while maintaining the same quality. Scope should be the focus of the stakeholders: when a project starts it is difficult to say what is really expected it to become.
+
+When either Cost and/or Time are limited we must be aware that Quality or Scope will be affected.
+
+XP, as presented in the following sections, will propose practices to reduce the costs of these risks to a minimum by identifying problems shortly after they arise or by avoiding them completely. 
+
+\subsection{The fundamentals behind XP}
+XP embraces five values to guide development: communication, simplicity, feedback, courage, and respect. From this more abstract principles, XP has some fundamental principles that support all its practices. Those are:
+\paragraph{Humanity \& Diversity \& Mutual Benefit \& Accepted Responsibility} XP aims at developers, that are above all humans and need a balance between personal and professional lives. Teams are expected to have all kinds of knowledge needed inside of it, through diversity of workers. In XP, people work towards a common goal. ``The computer business is really a people business and maintaining working relationships is important.''\cite{Beck:2004tc} Each team member should say which tasks he wants to do, thus accepting his responsibility in the project;
+\paragraph{Failure \& Reflection \& Opportunity \& Improvement \& Baby Steps} Failed approaches to a problem are a good thing. With failure, developers will learn how to do it correctly. Teams should think about what they do ir order to improve. Each problem should be used as an opportunity to improve.  XP aims for continuous improvement, and with its methods tries to find areas where the team can do better. Baby Steps are therefore a metaphor for these practices that take place over the course of time;
+\paragraph{Flow \& Self-Similarity \& Redundancy \& Quality} There should be a continuous flow of activities in contrast with large blocks of different activities, e.g. the team should do continuous integration; Also patterns should be valued. These help keeping an organised structure and comprehensive code. Redundancy helps to keep the defect rate very low, e.g. by the use of pair programming. All to achieve quality. Developers should be aware that lowering quality standards often results in later, less predictable delivery;
+\paragraph{Economics} In the long run, XP will benefit the company economically by providing better software.
+
+\subsection{Primary Practices}
+As mentioned above XP is a set of good practices that gain a new meaning when joined. To effectively put XP into practice a team should implement \textit{all} of these (as showed in figure \ref{fig:xp_pract}):
+
+\paragraph{Sit Together} The best way for a team to work, is to be in the same space. This shared space will allow the team members to clarify any doubt they have with any other team member. This will fasten their work;
+\paragraph{Whole Team} Teams should be cross-functional and all team members should focus on only one project at a time;
+\paragraph{Informative Workspace} The workspace should remind the team what they are there to do. The use of a planing board with user stories is one important artefact to have there;
+\paragraph{Energized Work} This practice used to be named \textit{40-hour week}. It translated in having balanced work days. Although over-hours can be done once in a while, there should not be a ``Today we will have to stay later \textit{again}'' discourse.
+\paragraph{Pair Programming} Pair programming consists in having two individuals setting side-by-side with only one computer where they code. One individual is the driver, he writes the code. The other is watching and helping the driver. Together they design a complete system. Pairs should not be fixed. A developer should pair, at least, with two other developers per day, allowing the team to interact as a whole;
+\paragraph{Stories} User Stories (US) should have a title and a brief description. They should be estimated early in the development cycle. This way the customer will be more informed when making decisions;
+\paragraph{Weekly Cycle} The starting of each week should include: a review of the progress to date, having the customers pick US for that week and having the developers breaking these into tasks, estimating them and taking responsibility over them. After this, acceptance tests should be defined. The purpose of having a one-week cycle is because everyone is focused on Friday.
+\paragraph{Quarterly Cycle} Every three months, a team should stop to review their work and focus on the big picture. Like weeks, seasons can be a natural starting point for each cycle;
+\paragraph{Slack} Every one in a while, there should be time for other activities, usually 20\% of the time (e.g. weeks). This will give the project a margin to get back on track if needed, too;
+\paragraph{Ten-Minute Build} Builds should be optimised so they take ten minutes maximum. Long builds mean that programmers will not conduct testing as often as they should;
+\paragraph{Continuous Integration} The code developed by a pair should be integrated every two hours. This will allow problems to arise sooner. It can be done in a synchronised or unsynchronised way. K. Beck recommends to keep it synchronised in order to not lose focus if it fails;
+\paragraph{Test-First Programming} One of the main beliefs of XP is this one. Before implementing a task, all tests for it should be written. This will force developers to think before coding and consider different designs that could work. More than that, it will provide a guarantee that tests are not written to fit the implementation. Having a 100\% coverage means that one can safely change code being sure it will not break another feature. \cite{Martin:2009uy}
+\paragraph{Incremental Design} Requirements change. Although doing the whole design upfront can allow do have a structured software, the cost of putting it together is high, considering it can change anytime. XP says that teams should design with \textit{Baby Steps}, i.e., adding new layers as they are needed without loosing sight of the big picture. As mentioned above, because the code is fully tested, coders can efficiently refactor their design without fearing that they will be breaking other part of the system.
+
+These practices are complemented with some more advanced ones, called \textit{Corollaries}, that can also be seen in figure \ref{fig:xp_pract}.
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{xp_practices.png}
+\caption{An overview of XP practices \cite{Beck:2004tc}}
+\label{fig:xp_pract}
+\end{figure}
+
+\subsection{Difficulties using XP}
+The main problem using XP comes from the difficulty to have all practices in place, since it requires an extra effort from developers. Without all the practices in place, XP will not be complete and will not deliver what it promises to.
+Another difficulty is to provide the customer a real estimate of the cost of the project since the requirements are allowed to change over time. There is also a concern regarding the fact that no documentation is written, because well-written code is considered to be enough.\cite{Rosenberg:2003ui}
+
+\subsection{Summing up}
+XP brings a new way of working to Software Industry. Teams can achieve better results and speed up the development process. It is based on flexibly and team work. On the other hand, XP is a big move for software teams and easier to implement in more mature environments.
+
+\section{Scrum}
+
+Scrum is an Agile methodology to manage software projects and was first presented by Ken Schwaber and Jeff Sutherland in 1995\cite{Schwaber:wr}. In contrast with other methodologies, Scrum does not cover specific working practices, but rather the way planning is done. It aims to give teams more productivity while improving \textit{Transparency} between the software team and the client, allowing \textit{Inspection} of the current state of the project and facilitating \textit{Adaptation} if the project goals change.
+
+\subsection{The Scrum process}
+
+
+
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{scrum.png}
+\caption{An overview of the Scum methodology \cite{MountainGoatSoftware:raENhEga}}
+\label{fig:scrum}
+\end{figure}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -723,7 +818,7 @@ The conclusion goes here.
 
 
 % use section* for acknowledgment
-\section*{Acknowledgment}
+%\section*{Acknowledgment}
 
 
 The authors would like to thank...
@@ -742,23 +837,8 @@ The authors would like to thank...
 
 % references section
 
-% can use a bibliography generated by BibTeX as a .bbl file
-% BibTeX documentation can be easily obtained at:
-% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
-% The IEEEtran BibTeX style support page is at:
-% http://www.michaelshell.org/tex/ieeetran/bibtex/
-%\bibliographystyle{IEEEtran}
-% argument is your BibTeX string definitions and bibliography database(s)
-%\bibliography{IEEEabrv,../bib/paper}
-%
-% <OR> manually copy in the resultant .bbl file
-% set second argument of \begin to the number of references
-% (used to reserve space for the reference number labels box)
-\begin{thebibliography}{3}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+\AtEndEnvironment{thebibliography}{
+% all your extra bibitems go here
 
 \bibitem{openalloc}
  Chris Dannen. \emph{Inside GitHub's Super-Lean Management Strategy And How It Drives Innovation".}
@@ -814,7 +894,31 @@ system}.
   https://youtu.be/CKWvmiY7f\_g .
   Acessed 4-Nov 2015.
 
-\end{thebibliography}
+\bibitem{bigballofmud}
+Brian Foote and Joseph Yoder. \emph{Big Ball of Mud}. Fourth Conference on Patterns Languages of Programs, Monticello, Illinois, September 1997.
+
+\bibitem{pmtwiki}
+Wikipedia. \emph{Project Management Triangle}.
+https://en.wikipedia.org/wiki/Project\_management\_triangle .
+Accessed 5-Nov 2015. 
+
+}
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+\bibliography{IEEEabrv,augusto.bib}
+
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+% \begin{thebibliography}{3}
+% \end{thebibliography}
 
 
 

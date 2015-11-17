@@ -411,7 +411,33 @@ software testing in their workflows.
 
 \section{Introduction}
 
-To do
+  A recent study by HP has shown that, out of a universe of of 401 professional IT
+developers, only 8\% of them were either using Waterfall methodologies or something
+closely similar. On the other hand, 16\% are reportedly using pure agile, with
+51\% use a methodology leaning towards agile \cite{hp}.
+  Agile methodologies are frameworks that range from a set of lightweight principles
+to manage workflow, such as Kanban, to full-fleged project management and software
+development strict guidelines such as Extreme Programming. What is common among all
+of them is a set of principles, which we describe in section \ref{agile}, which
+comprise the \textit{Agile Manifesto}.
+  The downside of having such a broad definition is that, so that developers and
+managers can pick whatever methodology, or principles of a methodology, they want
+to follow or incorporate in their organisations, they have to filter through
+half a dozen alternatives and variants, each of them requiring the time-consuming tasks
+of either reading a book or digging through materials of different sources just to
+get a reasonable overview before proceeding to a deeper study.
+  The purpose of this article is to provide a single entry point for the reader to learn
+about the most widely used agile methodologies. In order to do so effectively, we
+start by introducing Agile in section \ref{agile} and briefly detailing its principles, then we
+focus on each of the agile methodologies with greater adoption (Kanban, Extreme Programming and Scrum),
+where we lay out their core concepts and advantages.
+  Because, in HP's study, 52\% of the developers pointed out that increasing
+the level of the software quality in their organizations was one of the reasons they
+adopted or were planning to adopt agile methodologies, we have also included in each
+methodologie's section a part exclusively dedicated to testing. Testing and software
+quality go hand in hand \cite{qa}, so we had a special concern in contextualizing and
+explaining how software testing fits in every of the methodologies we approach.
+
 
 %
 % -> Overview Agile
@@ -429,6 +455,7 @@ To do
 %
 
 \section{Agile Software Development}
+\label{agile}
 
 The term \textit{Agile Software Development} was introduced in 2001. It aimed to provide a large umbrella to the new vision that had started to rise among the software community. This vision is centred in four values \cite{Martin:2006vx}:
 \paragraph{Individuals and interactions over processes and tools} Agile considers that the software industry is, above all, a people's industry. By this reason, assembling a good team will be of greater value than to have many processes that guide them through development;
@@ -636,7 +663,7 @@ The development of software, like other creation activities, have economic risks
 \paragraph{Maintainability} As the software gets more and more features it can become harder to keep it in a organized way, eventually becoming a \textit{big ball of mud}\cite{bigballofmud};
 \paragraph{High defect rate} Without a clear focus on testing, software will become full of \textit{bugs} and any change in legacy code will be reduced to a maximum, because it will possibly break the whole system.
 
-These risks translate in four variables\footnote{Presented in the first edition of \cite{Beck:2004tc}} we want to control and predict. 
+These risks translate in four variables\footnote{Presented in the first edition of \cite{Beck:2004tc}} we want to control and predict.
 These variables are usually considered in project management and represented in a triangle like figure \ref{fig:triad} shows.
 
 \begin{figure}
@@ -654,7 +681,7 @@ They are:
 
 When either Cost and/or Time are limited we must be aware that Quality or Scope will be affected.
 
-XP, as presented in the following sections, will propose practices to reduce the costs of these risks to a minimum by identifying problems shortly after they arise or by avoiding them completely. 
+XP, as presented in the following sections, will propose practices to reduce the costs of these risks to a minimum by identifying problems shortly after they arise or by avoiding them completely.
 
 \subsection{The fundamentals behind XP}
 XP embraces five values to guide development: communication, simplicity, feedback, courage, and respect. From this more abstract principles, XP has some fundamental principles that support all its practices. Those are:
@@ -900,7 +927,7 @@ Brian Foote and Joseph Yoder. \emph{Big Ball of Mud}. Fourth Conference on Patte
 \bibitem{pmtwiki}
 Wikipedia. \emph{Project Management Triangle}.
 https://en.wikipedia.org/wiki/Project\_management\_triangle .
-Accessed 5-Nov 2015. 
+Accessed 5-Nov 2015.
 
 }
 
